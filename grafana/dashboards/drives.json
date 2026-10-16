@@ -1419,7 +1419,7 @@
         },
         "definition": "SELECT\n    id as __value,\n    CASE WHEN COUNT(id) OVER (PARTITION BY name) > 1 AND name IS NOT NULL THEN CONCAT(name, ' - ', RIGHT(vin, 6)) ELSE COALESCE(name, CONCAT('VIN ', vin)) end as __text \nFROM cars\nORDER BY display_priority ASC, name ASC, vin ASC;",
         "includeAll": false,
-        "label": "Car",
+        "label": "Auto",
         "name": "car_id",
         "options": [],
         "query": "SELECT\n    id as __value,\n    CASE WHEN COUNT(id) OVER (PARTITION BY name) > 1 AND name IS NOT NULL THEN CONCAT(name, ' - ', RIGHT(vin, 6)) ELSE COALESCE(name, CONCAT('VIN ', vin)) end as __text \nFROM cars\nORDER BY display_priority ASC, name ASC, vin ASC;",
@@ -1454,7 +1454,7 @@
           "value": ""
         },
         "description": "Type a text contained in Start or Destination Location",
-        "label": "Location",
+        "label": "Posizione",
         "name": "location",
         "options": [
           {
@@ -1577,7 +1577,7 @@
           "value": "slope-adjusted"
         },
         "description": "Select how Efficiency ratings should be calculated.\n\n\"by distance\" is doing a simple comparison based on distance driven and range lost while driving.\n\n\"slope-adjusted\" takes ascent / descent of the drive into account and adjusts the energy consumed accordingly. regen breaking efficiency is set to 85% and the vehicle is assumed to have a weight of 2100 kg.",
-        "label": "Efficiency",
+        "label": "Efficienza",
         "name": "efficiency",
         "options": [],
         "query": "slope-adjusted,by distance",
@@ -1592,7 +1592,7 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "Drives",
+  "title": "Viaggi",
   "weekStart": "",
   "version": 1,
   "uid": "Y8upc6ZRk"
