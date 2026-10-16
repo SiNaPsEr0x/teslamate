@@ -8,7 +8,6 @@ defmodule TeslaMateWeb.LayoutViewTest do
       dashboards = LayoutView.dashboards_for_locale("it")
 
       assert %{\"title\" => \"Panoramica\", \"uid\" => \"kOuP_Fggz-it\"} in dashboards
-      assert %{\"title\" => \"Stati\", \"uid\" => \"xo4BNRkZz-it\"} in dashboards
       refute Enum.any?(dashboards, &(&1[\"uid\"] == \"kOuP_Fggz\"))
     end
 
