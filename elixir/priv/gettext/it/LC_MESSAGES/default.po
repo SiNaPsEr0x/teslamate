@@ -703,7 +703,7 @@ msgid "Theme"
 msgstr "Tema"
 
 #: lib/teslamate_web/live/car_live/summary.html.heex:120
-#, elixir-autogen, elixir-format, fuzzy
+#, elixir-autogen, elixir-format
 msgid "Service Mode"
 msgstr "Modalità assistenza"
 
