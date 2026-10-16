@@ -34,7 +34,7 @@
       "tags": [
         "tesla"
       ],
-      "title": "Dashboards",
+      "title": "Dashboard",
       "type": "dashboards"
     }
   ],
@@ -58,7 +58,7 @@
         "type": "grafana-postgresql-datasource",
         "uid": "TeslaMate"
       },
-      "description": "Only distinguishes between online, offline and asleep.",
+      "description": "Distingue soltanto tra online, offline e in riposo.",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -136,7 +136,7 @@
           }
         }
       ],
-      "title": "Last state change",
+      "title": "Ultimo cambio di stato",
       "type": "stat"
     },
     {
@@ -144,7 +144,7 @@
         "type": "grafana-postgresql-datasource",
         "uid": "TeslaMate"
       },
-      "description": "Only distinguishes between online, offline and asleep.",
+      "description": "Distingue soltanto tra online, offline e in riposo.",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -222,7 +222,7 @@
           }
         }
       ],
-      "title": "Current State",
+      "title": "Stato attuale",
       "type": "stat"
     },
     {
@@ -230,7 +230,7 @@
         "type": "grafana-postgresql-datasource",
         "uid": "TeslaMate"
       },
-      "description": "based on any data ever recorded.",
+      "description": "Basato su tutti i dati registrati.",
       "fieldConfig": {
         "defaults": {
           "mappings": [
@@ -320,7 +320,7 @@
           }
         }
       ],
-      "title": "parked (%)",
+      "title": "In sosta (%)",
       "type": "stat"
     },
     {
@@ -464,7 +464,7 @@
           }
         }
       ],
-      "title": "States",
+      "title": "Stati",
       "type": "state-timeline"
     }
   ],
@@ -485,7 +485,7 @@
         "definition": "SELECT\n    id as __value,\n    CASE WHEN COUNT(id) OVER (PARTITION BY name) > 1 AND name IS NOT NULL THEN CONCAT(name, ' - ', RIGHT(vin, 6)) ELSE COALESCE(name, CONCAT('VIN ', vin)) end as __text \nFROM cars\nORDER BY display_priority ASC, name ASC, vin ASC;",
         "hide": 2,
         "includeAll": true,
-        "label": "Car",
+        "label": "Auto",
         "name": "car_id",
         "options": [],
         "query": "SELECT\n    id as __value,\n    CASE WHEN COUNT(id) OVER (PARTITION BY name) > 1 AND name IS NOT NULL THEN CONCAT(name, ' - ', RIGHT(vin, 6)) ELSE COALESCE(name, CONCAT('VIN ', vin)) end as __text \nFROM cars\nORDER BY display_priority ASC, name ASC, vin ASC;",
@@ -519,7 +519,7 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "States",
+  "title": "Stati",
   "weekStart": "",
   "version": 1,
   "uid": "xo4BNRkZz"
