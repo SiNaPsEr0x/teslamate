@@ -3,18 +3,7 @@ defmodule TeslaMateWeb.GrafanaI18nTest do
 
   @dashboards_dir Path.expand("../../../grafana/dashboards", __DIR__)
   @pack_path Path.expand("../../../grafana/i18n/it.json", __DIR__)
-
-  @localizable_keys MapSet.new([
-                       "title",
-                       "description",
-                       "label",
-                       "displayName",
-                       "legendFormat",
-                       "tooltip",
-                       "noValue",
-                       "text",
-                       "alias"
-                     ])
+  @localizable_keys ~w(title description label displayName legendFormat tooltip noValue text alias)
   @sql_alias ~r/\bAS\s+["']([^"']+)["']/i
 
   test "Italian Grafana locale pack covers every user-visible dashboard string" do
@@ -29,6 +18,7 @@ defmodule TeslaMateWeb.GrafanaI18nTest do
       |> Path.wildcard()
       |> Enum.reduce({MapSet.new(), []}, fn path, {acc, missing_titles} ->
         dashboard = path |> File.read!() |> Jason.decode!()
+
         relative_key =
           path
           |> Path.relative_to(@dashboards_dir)
@@ -42,13 +32,13 @@ defmodule TeslaMateWeb.GrafanaI18nTest do
             [relative_key | missing_titles]
           end
 
-        root_title = dashboard["title"]
+        candidates =
+          dashboard
+          |> collect_visible_strings()
+          |> maybe_delete(dashboard["title"])
+          |> MapSet.union(acc)
 
-        dashboard
-        |> collect_visible_strings()
-        |> maybe_delete(root_title)
-        |> MapSet.union(acc)
-        |> then(&{&1, missing_titles})
+        {candidates, missing_titles}
       end)
 
     missing =
@@ -77,7 +67,7 @@ defmodule TeslaMateWeb.GrafanaI18nTest do
   defp collect_visible_strings(value, acc) when is_map(value) do
     Enum.reduce(value, acc, fn {key, item}, acc ->
       cond do
-        MapSet.member?(@localizable_keys, key) and is_binary(item) ->
+        key in @localizable_keys and is_binary(item) ->
           add_visible(item, acc)
 
         key == "renameByName" and is_map(item) ->
