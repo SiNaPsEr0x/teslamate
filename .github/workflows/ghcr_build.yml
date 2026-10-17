@@ -22,7 +22,10 @@ on:
   workflow_dispatch:
 
 env:
-  REGISTRY_IMAGE: ghcr.io/${{ github.repository }}
+  # Docker/GHCR repository names must be lowercase. GitHub preserves the
+  # account's display casing in github.repository, so use the canonical
+  # lowercase package path for this fork.
+  REGISTRY_IMAGE: ghcr.io/sinapser0x/teslamate
 
 permissions:
   contents: read
@@ -67,7 +70,7 @@ jobs:
         with:
           docker_password: ${{ secrets.DOCKER_PASSWORD }}
           repository_owner: ${{ github.repository_owner }}
-          repository: ${{ github.repository }}
+          repository: sinapser0x/teslamate
           github_token: ${{ secrets.GITHUB_TOKEN }}
           version: ${{ github.head_ref || github.ref_name }}
           labels: |
