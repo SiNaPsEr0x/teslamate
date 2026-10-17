@@ -95,10 +95,23 @@ defmodule TeslaMateWeb.GrafanaI18nTest do
   defp add_visible(value, acc) when is_binary(value) do
     value = String.trim(value)
 
-    if value == "" do
-      acc
-    else
-      MapSet.put(acc, value)
+    cond do
+      value == "" ->
+        acc
+
+      # Grafana variables, field references, numeric values and time intervals
+      # are identifiers/data, not natural-language text to translate.
+      Regex.match?(~r/^\\$\\{?[A-Za-z_][A-Za-z_0-9.:\\[\\]]*\\}?$/, value) ->
+        acc
+
+      Regex.match?(~r/^[0-9]+(?:\\.[0-9]+)?(?:ms|s|m|h|d|w)?$/, value) ->
+        acc
+
+      value in ["--", ".", "ID"] ->
+        acc
+
+      true ->
+        MapSet.put(acc, value)
     end
   end
 
