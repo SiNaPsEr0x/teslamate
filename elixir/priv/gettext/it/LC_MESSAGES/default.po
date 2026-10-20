@@ -613,9 +613,9 @@ msgid "No encryption key provided"
 msgstr "Non è stata fornita nessuna chiave di crittazione"
 
 #: lib/teslamate_web/templates/layout/root.html.heex:171
-#, elixir-autogen, elixir-format, fuzzy
+#, elixir-autogen, elixir-format
 msgid "For more information, see the updated installation guides on %{link}"
-msgstr "Per maggiori informazioni, si veda le guide di installazione aggiornate a %{link}"
+msgstr "Per maggiori informazioni, consulta le guide di installazione aggiornate su %{link}"
 
 #: lib/teslamate_web/templates/layout/root.html.heex:164
 #, elixir-autogen, elixir-format
@@ -623,9 +623,9 @@ msgid "The automatically generated encryption key used for the current session c
 msgstr "La chiave di crittazione generata automaticamente ed usata per la sessione corrente può essere trovata <strong>nei log dell'applicazione</strong>."
 
 #: lib/teslamate_web/templates/layout/root.html.heex:157
-#, elixir-autogen, elixir-format, fuzzy
+#, elixir-autogen, elixir-format
 msgid "To ensure that your <strong>Tesla API tokens are stored securely</strong>, an encryption key must be provided to TeslaMate via the <code>ENCRYPTION_KEY</code> environment variable. Otherwise, a <strong>login will be required after every restart</strong>."
-msgstr "Per assicurarsi che <strong>i token Tesla API siano salvati in maniera sicura</strong>, deve essere fornita a TeslaMate una chive di crittazione tramice la variabile di ambiente <code>ENCRYPTION_KEY</code>. Altrimenti, un <strong>login sarà richiesto dopo ogni riavvio</strong>."
+msgstr "Per assicurarti che <strong>i token dell'API Tesla siano archiviati in modo sicuro</strong>, devi fornire a TeslaMate una chiave di crittografia tramite la variabile di ambiente <code>ENCRYPTION_KEY</code>. In caso contrario, sarà necessario <strong>effettuare nuovamente l'accesso dopo ogni riavvio</strong>."
 
 #: lib/teslamate_web/live/settings_live/index.html.heex:394
 #, elixir-autogen, elixir-format
@@ -648,9 +648,9 @@ msgid "Expected Finish Time"
 msgstr "Tempo di completamento stimato"
 
 #: lib/teslamate_web/live/signin_live/index.html.heex:60
-#, elixir-autogen, elixir-format, fuzzy
+#, elixir-autogen, elixir-format
 msgid "You are using the API key (%{token}) provided by %{url}. It will allow your TeslaMate to access the official Tesla Fleet API and Tesla Telemetry streaming."
-msgstr "Stai usando la chiave API (%{token}) fornita da %{url}. Questa permette al tuo TeslaMate di accedere alle API Tesla Fleet ufficiali e allo streaming della telemetria di Tesla."
+msgstr "Stai utilizzando la chiave API (%{token}) fornita da %{url}. Consentirà a TeslaMate di accedere all'API ufficiale Tesla Fleet e allo streaming Tesla Telemetry."
 
 #: lib/teslamate_web/live/settings_live/index.html.heex:30
 #, elixir-autogen, elixir-format
@@ -668,12 +668,12 @@ msgid "LFP Battery"
 msgstr "Batteria LFP"
 
 #: lib/teslamate_web/live/car_live/summary.html.heex:161
-#, elixir-autogen, elixir-format, fuzzy
+#, elixir-autogen, elixir-format
 msgid "Sentry Mode recording"
 msgstr "Modalità Sentinella in registrazione"
 
 #: lib/teslamate_web/live/car_live/summary.html.heex:130
-#, elixir-autogen, elixir-format, fuzzy
+#, elixir-autogen, elixir-format
 msgid "View car location on Google Maps"
 msgstr "Visualizza la posizione dell'auto in Google Maps"
 
@@ -708,9 +708,9 @@ msgid "Service Mode"
 msgstr "Modalità assistenza"
 
 #: lib/teslamate_web/live/car_live/summary.html.heex:185
-#, elixir-autogen, elixir-format, fuzzy
+#, elixir-autogen, elixir-format
 msgid "Downloading %{percent}%"
-msgstr "Download dell'aggiornamento in corso"
+msgstr "Download dell'aggiornamento: %{percent}%"
 
 #: lib/teslamate_web/live/car_live/summary.html.heex:181
 #, elixir-autogen, elixir-format
